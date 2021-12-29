@@ -1,0 +1,71 @@
+:root {
+  --main-font: 'Roboto', sans-serif;
+  --accent-color: #742863;
+  --main-text-color: #222222;
+  --secondary-text-color: #000000;
+  --main-color: #ffffff;
+  --font-size: 18px;
+  --line-height: 1.17;
+
+  /* ====== animation ========== */
+  --time: 250ms;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ====== breakpoints ========= */
+  --mobile: 320px;
+  --tablet: 768px;
+  --desktop: 1024px;
+}
+
+body {
+  font-family: var(--main-font);
+  background-color: var(--accent-color);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
+.form {
+  display: flex;
+  flex-flow: column;
+  background-color: var(--main-color);
+  margin: 20px 20px;
+  padding-left: 20px;
+}
+
+.title {
+  margin-top: 20px;
+  padding-top: 20px;
+  /* padding-left: 20px; */
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--secondary-text-color);
+}
+
+.label {
+  color: var(--accent-color);
+}
+
+.input {
+  font-size: 20px;
+  resize: none;
+  color: var(--main-text-color);
+  margin-top: 5px;
+}
+
+.textarea {
+  font-size: 20px;
+  resize: none;
+  color: var(--main-text-color);
+  margin-top: 5px;
+}
+button {
+  max-width: 213px;
+  margin-top: 10px;
+}
+
+button:last-child {
+  margin-bottom: 10px;
+}
+.add-btn {
+  margin-bottom: 10px;
+}
