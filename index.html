@@ -26,13 +26,16 @@
         <input
           class="input"
           type="text"
-          name="username"
-          placeholder="Name = Value"
+          name="text"
+          placeholder="Name=Value"
+          required
+          pattern="^[A-Za-z0-9]+=[A-Za-z0-9]+$"
+          title="Must include alpha-numeric characters only"
         />
       </label>
-      <button class="add-btn" type="submit">Add</button>
+      <button class="add-btn" type="submit" disabled>Add</button>
 
-      <label class="label">
+      <!-- <label class="label">
         Name/Value Pair List
         <textarea
           class="textarea"
@@ -40,14 +43,18 @@
           rows="10"
           readonly
         ></textarea>
-      </label>
-      <button type="submit" data-action="sort-name">Sort by Name</button>
-      <button type="submit" data-action="sort-value">Sort by Value</button>
-      <button type="submit" data-action="delete">Delete</button>
-      <button type="submit" data-action="xml">Show XML</button>
+      </label> -->
+      <p class="label">Name/Value Pair List</p>
+      <ul class="list"></ul>
+      <button type="button" data-action="sort-name">Sort by Name</button>
+      <button type="button" data-action="sort-value">Sort by Value</button>
+      <button type="button" data-action="delete">Delete</button>
+      <button type="button" data-action="xml">Show XML</button>
     </form>
 
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./js/index.js"></script>
   </body>
 </html>
+
+<li>{name}={value}</li>
