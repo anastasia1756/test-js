@@ -78,10 +78,16 @@ const deleteClick = () => {
   if (listItem) {
     listItem.remove();
     sortName = [];
-    console.log(sortName);
+    sortValue = [];
     refs.sortByNameBtn.setAttribute('disabled', 'disabled');
     refs.sortByValueBtn.setAttribute('disabled', 'disabled');
   }
 };
 
 refs.deleteBtn.addEventListener('click', deleteClick);
+
+refs.xmlBtn.addEventListener('click', () => {
+  var oSerializer = new XMLSerializer();
+  var sXML = oSerializer.serializeToString(refs.list);
+  refs.list.textContent = `${sXML}`;
+});
