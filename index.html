@@ -21,40 +21,43 @@
   <body>
     <form class="form">
       <h1 class="title">Test</h1>
-      <label class="label">
-        Name/Value Pair
-        <input
-          class="input"
-          type="text"
-          name="text"
-          placeholder="Name=Value"
-          required
-          pattern="^[A-Za-z0-9]+=[A-Za-z0-9]+$"
-          title="Must include alpha-numeric characters only"
-        />
-      </label>
-      <button class="add-btn" type="submit" disabled>Add</button>
-
-      <!-- <label class="label">
-        Name/Value Pair List
-        <textarea
-          class="textarea"
-          name="feedback"
-          rows="10"
-          readonly
-        ></textarea>
-      </label> -->
+      <div class="wrapper">
+        <label class="label">
+          <span class="text">Name/Value Pair</span>
+          <input
+            class="input"
+            type="text"
+            name="text"
+            placeholder="Name=Value"
+            required
+            pattern="^[A-Za-z0-9]+=[A-Za-z0-9]+$"
+            title="Must include alpha-numeric characters only"
+          />
+        </label>
+        <button class="add-btn glow-on-hover" type="submit" disabled>
+          Add
+        </button>
+      </div>
       <p class="label">Name/Value Pair List</p>
-      <ul class="list"></ul>
-      <button type="button" data-action="sort-name">Sort by Name</button>
-      <button type="button" data-action="sort-value">Sort by Value</button>
-      <button type="button" data-action="delete">Delete</button>
-      <button type="button" data-action="xml">Show XML</button>
+      <div class="output">
+        <ul class="list"></ul>
+        <div class="buttons">
+          <button class="glow-on-hover" type="button" data-action="sort-name">
+            Sort by Name
+          </button>
+          <button class="glow-on-hover" type="button" data-action="sort-value">
+            Sort by Value
+          </button>
+          <button class="glow-on-hover" type="button" data-action="delete">
+            Delete
+          </button>
+          <button class="glow-on-hover" type="button" data-action="xml">
+            Show XML
+          </button>
+        </div>
+      </div>
     </form>
 
-    <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./js/index.js"></script>
   </body>
 </html>
-
-<li>{name}={value}</li>

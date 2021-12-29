@@ -44,11 +44,7 @@ const onAddBtnClick = (e) => {
   listItem = document.querySelectorAll('.list-item');
 
   refs.sortByNameBtn.addEventListener('click', () => {
-    const pair = {
-      name: upperNameInput,
-      value: upperValueInput,
-    };
-    const firstWord = pair.name;
+    const firstWord = upperNameInput;
     sortName.push(firstWord);
 
     const uniqueSorted = sortName
@@ -60,19 +56,14 @@ const onAddBtnClick = (e) => {
   });
 
   refs.sortByValueBtn.addEventListener('click', () => {
-    const pair = {
-      name: upperNameInput,
-      value: upperValueInput,
-    };
-    const secondWord = pair.value;
+    const secondWord = upperValueInput;
     sortValue.push(secondWord);
     const uniqueValues = sortValue
       .sort()
       .filter(
         (secondWord, index, array) => array.indexOf(secondWord) === index
       );
-    pair.value = uniqueValues;
-    const sortByValue = pair.value.join('<br>');
+    const sortByValue = uniqueValues.join('<br>');
     const sortedValueList = `<li class="list-item">${sortByValue}</li>`;
     refs.list.innerHTML = sortedValueList;
   });
@@ -83,8 +74,11 @@ refs.addBtn.addEventListener('click', onAddBtnClick);
 
 const deleteClick = () => {
   listItem = document.querySelector('.list-item');
+
   if (listItem) {
     listItem.remove();
+    sortName = [];
+    console.log(sortName);
     refs.sortByNameBtn.setAttribute('disabled', 'disabled');
     refs.sortByValueBtn.setAttribute('disabled', 'disabled');
   }
